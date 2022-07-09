@@ -3,7 +3,6 @@ use c2pa::{
     get_signer_from_files, Error, Manifest, ManifestStore,
 };
 
-use std::fs::File;
 use std::path::PathBuf;
 
 // output file
