@@ -7,7 +7,7 @@ use std::fs::File;
 use std::path::PathBuf;
 
 // output file
-const DESTINATION_PATH: &str = "/tmp/claims/test-c2pa-trump-trial-with-claims.jpeg";
+const DESTINATION_PATH: &str = "./claims/test-c2pa-trump-trial-with-claims.jpeg";
 
 // source image
 const SOURCE_PATH: &str = "./jan6.jpeg";
@@ -43,8 +43,8 @@ fn write_assertion() -> Result<(), Error> {
      * I had difficulty generating these (since creating a self-signed cert is not straightforward), so I
      * pulled the pub/pem files from the repo examples
      */
-    let signcert_path = "/tmp/keys/c2pa.pub";
-    let pkey_path = "/tmp/keys/c2pa.pem";
+    let signcert_path = "./keys/c2pa.pub";
+    let pkey_path = "./keys/c2pa.pem";
 
     // note that to use the `get_signer_from_files, the `file_io` feature needs to be enabled
     let signer_result = get_signer_from_files(signcert_path, pkey_path, "ps256", None);
